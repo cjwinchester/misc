@@ -11,24 +11,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://codywinchester.com/assets/style.css">
   <style>
-    div.entry {
-      border-bottom: 1px solid #aaa;
+
+    marquee {
       margin-bottom: 3rem;
     }
 
-    div.entry:last-of-type {
-      border: none;
+    div.entry {
+      margin-bottom: 4.5rem;
+      border: 1px dotted #bbb;
+      padding: 1rem;
     }
 
     div.entry p.timestamp {
       color: gray;
       font-family: Verdana, Arial, sans-serif;
       font-size: 0.7rem;
-      margin-bottom: 0.5rem;
+      margin: 0 auto 1rem auto;
     }
 
     h3 {
-      margin-top: 0;
+      margin: 0;
+    }
+
+    pre {
+      background: #eee;
+      padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+      border-left: 5px solid #111;
+      margin-bottom: 0;
+    }
+
+    div.show-more {
+      border-top: 1px solid #bbb;
+      text-align: center;
+      margin: 3rem auto;
+    }
+
+    div.show-more-wrapper {
+      margin-top: -0.75rem
+    }
+
+    span.show-more-click {
+      border: 1px solid #bbb;
+      padding: 0.5rem;
+      z-index: 999 !important;
+      background-color: #FEFCF9;
+      cursor: pointer;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    span.show-more-click:hover {
+      background-color: #eee;
+    }
+
+    div.hidden-text {
+      display: none;
     }
 
   </style>
@@ -36,15 +75,58 @@
 
 <body>
   <marquee><h1>¯\_(ツ)_/¯ Miscellanous ¯\_(ツ)_/¯</h1></marquee>
+
+  <div class="entry" id="2020-05-20T23:19:25.269Z">
+    <p class="timestamp">
+      <a href="#2020-05-20T23:19:25.269Z">#2020-05-20T23:19:25.269Z</a>
+    </p>
+    <h3><a href="https://www.balena.io/blog/turn-your-old-speakers-or-hi-fi-into-bluetooth-receivers-using-only-a-raspberry-pi/">turn your hi-fi into a bluetooth receiver with this raspberry pi kit</a></h3>
+  </div>
+
+  <div class="entry" id="2020-05-20T23:15:16.010Z">
+    <p class="timestamp">
+      <a href="#2020-05-20T23:15:16.010Z">#2020-05-20T23:15:16.010Z</a>
+    </p>
+    <h3>because i was tired of copy/pasting from the emojipedia page title</h3>
+    <pre><code># in my ~/.zshrc (OSX)
+function shrug () { printf '¯\_(ツ)_/¯' | pbcopy }</code></pre>
+  </div>
+
+  <div class="entry" id="2020-05-20T18:33:45.394Z">
+    <p class="timestamp">
+      <a href="#2020-05-20T18:33:45.394Z">#2020-05-20T18:33:45.394Z</a>
+    </p>
+    <h3>counting lines in a file</h3>
+    <pre><code>cat myfile.csv | wc -l</code></pre>
+  </div>
   
-  <div class="entry" id="2020-05-20T17:28:19.552Z">
+  <div class="entry" id="2020-05-20T17:28:19.552Z" data-fav="true">
     <p class="timestamp">
       <a href="#2020-05-20T17:28:19.552Z">#2020-05-20T17:28:19.552Z</a> ⭐️
     </p>
     <h3><a href="https://www.robinsloan.com/notes/integration-loop/">robin sloan: integration loop</a></h3>
-    <img src="integration-screenshot.png" style="width: 50%;" />
     <p>a crowdsourced reconstruction of william basinski's disintegration loops</p>
+    <a href="https://www.robinsloan.com/notes/integration-loop/">
+      <img src="integration-screenshot.png" style="max-width: 75%;" loading="lazy" />
+    </a>
   </div>
+
+  <script>
+    var show_more_divs = [].slice.call(document.querySelectorAll('span.show-more-click'));
+
+    function showMore() {
+      var new_text = this.textContent.toUpperCase() === 'SHOW MORE' ? 'SHOW LESS' : 'SHOW MORE';
+      this.textContent = new_text;
+      var hidden_text = this.parentElement.parentElement.nextElementSibling;
+      var new_state = hidden_text.style.display === 'block' ? 'none' : 'block';
+      hidden_text.style.display = new_state;
+    }
+
+    show_more_divs.forEach(function(x) {
+      x.addEventListener('click', showMore);
+    });
+
+  </script>
 
 </body>
 
