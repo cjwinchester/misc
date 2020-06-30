@@ -10,111 +10,37 @@
   <meta name="description" content="A little bit of this, a little of that. 🙌">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://codywinchester.com/assets/style.css">
-  <style>
-
-    marquee {
-      margin-bottom: 3rem;
-    }
-
-    div.entry {
-      margin-bottom: 2.5rem;
-      border: 1px dotted #bbb;
-      padding: 1rem;
-    }
-
-    div.entry p.timestamp {
-      color: gray;
-      font-family: Verdana, Arial, sans-serif;
-      font-size: 0.7rem;
-      margin: 0 auto 1rem auto;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    pre {
-      background: #eee;
-      padding: 0.5rem 0.5rem 0.5rem 0.7rem;
-      border-left: 5px solid #111;
-      margin-bottom: 0;
-      overflow-x: auto;
-    }
-
-    div.show-more {
-      border-top: 1px solid #bbb;
-      text-align: center;
-      margin: 3rem auto;
-    }
-
-    div.show-more-wrapper {
-      margin-top: -0.75rem
-    }
-
-    span.show-more-click {
-      border: 1px solid #bbb;
-      padding: 0.5rem;
-      z-index: 999 !important;
-      background-color: #FEFCF9;
-      cursor: pointer;
-      font-family: Verdana, Arial, sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      user-select: none;
-    }
-
-    span.show-more-click:hover {
-      background-color: #eee;
-    }
-
-    div.hidden-text {
-      display: none;
-    }
-
-    p.small {
-      font-size: 0.7rem;
-      font-family: Verdana, Arial, sans-serif;
-      margin-bottom: 0;
-    }
-
-    img {
-      max-width: 75%;
-      margin-top: 1rem;
-    }
-
-    img.fullwidth {
-      max-width: 100%;
-      margin-top: 0;
-    }
-
-    p.caption {
-       margin-top: 0;
-       text-align: right;
-    }
-
-    .embed-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-    }
-
-    .embed-container iframe,
-    .embed-container object,
-    .embed-container embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-  </style>
+  <link rel="stylesheet" href="s/misc-styles.css">
 </head>
 
 <body>
   <marquee><h1>¯\_(ツ)_/¯ Miscellanous ¯\_(ツ)_/¯</h1></marquee>
+
+  <div class="entry" id="2020-06-30T18:16:28.099Z">
+    <p class="timestamp">
+      <a href="#2020-06-30T18:16:28.099Z">#2020-06-30T18:16:28.099Z</a>
+    </p>
+
+    <div class="carousel"
+  data-flickity='{ "imagesLoaded": true, "wrapAround": true, "lazyLoad": true, "pageDots": false, "adaptiveHeight": false, "autoPlay": 3500, "pauseAutoPlayOnHover": true }'>
+    <img src="m/202006-fence.jpeg" alt="mountains with fence in foreground" />
+    <img src="m/202006-pano.jpeg" alt="horse creek" />
+    <img src="m/202006-cabin.jpeg" alt="a cabin in the mountains" />
+    <img src="m/202006-pond.jpeg" alt="a pond in the mountains" />
+    <img src="m/202006-jetta.jpeg" alt="a happy beagle" />
+    <img src="m/202006-hammock.jpeg" alt="me in a hammock" />
+  </div>
+
+    <p class="small caption" style="margin-top: 0.5rem"><a href="https://goo.gl/maps/gz1JKF36sFY1g8P99">Shoshone National Forest</a></p>
+  </div>
+
+  <div class="entry" id="2020-06-29T16:21:21.788Z">
+    <p class="timestamp">
+      <a href="#2020-06-29T16:21:21.788Z">#2020-06-29T16:21:21.788Z</a>
+    </p>
+    <h3><a href="https://store.usps.com/store/product/buy-stamps/hip-hop-S_476504">usps hip-hop stamps out soon</a></h3>
+  </div>
+
 
   <div class="entry" id="2020-06-29T14:40:00.288Z">
     <p class="timestamp">
@@ -276,8 +202,10 @@ function shrug () { printf '¯\_(ツ)_/¯' | pbcopy }</code></pre>
     </a>
   </div>
 
+  <script src="s/flickity.pkgd.min.js"></script>
+
   <script>
-    var show_more_divs = [].slice.call(document.querySelectorAll('span.show-more-click'));
+
 
     function showMore() {
       var new_text = this.textContent.toUpperCase() === 'SHOW MORE' ? 'SHOW LESS' : 'SHOW MORE';
