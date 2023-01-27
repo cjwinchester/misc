@@ -90,23 +90,24 @@ div.show-more-wrapper {
   margin-top: -0.75rem
 }
 
-span.show-more-click {
+div.show-more-click {
   border: 1px solid #bbb;
+  display: inline-block;
   padding: 0.5rem;
-  z-index: 999 !important;
-  background-color: #FEFCF9;
+  background-color: #ddd;
   cursor: pointer;
   font-family: Verdana, Arial, sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
   user-select: none;
+  margin: 0 auto;
 }
 
-span.show-more-click:hover {
-  background-color: #eee;
+div.show-more-click:hover {
+  background-color: #bbb;
 }
 
-div.hidden-text {
+div.more-content {
   display: none;
 }
 
